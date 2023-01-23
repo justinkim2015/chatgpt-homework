@@ -72,7 +72,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   Ruby::OpenAI.configure do |config|
-    config.access_token = ENV.fetch('chatgpt_key')
+    config.access_token = ENV['chatgpt_key']
     # config.organization_id = ENV.fetch('OPENAI_ORGANIZATION_ID') # Optional.
   end
 end
