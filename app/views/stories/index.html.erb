@@ -1,3 +1,11 @@
 <h1>Tell a Story!</h1>
 
 <%= @text %>
+
+<ul>
+  <% @stories.each do |story| %>
+    <li><%= story.title %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Story", new_story_path %>

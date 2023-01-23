@@ -1,0 +1,12 @@
+<%= form_with url: new_story_path, method: :get, class: "" do |f| %>
+    <%= f.label :input, 'Input 1 word' %>
+    <%= f.text_field :input, class: "" %>
+
+    <%= f.submit "Search", class: ""%>
+<% end %>
+
+<%= @json %>
+<br><br><br>
+<%= @text %>
+<br><br><br>
+<%= @quiz %>
