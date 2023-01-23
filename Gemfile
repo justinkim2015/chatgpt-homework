@@ -46,6 +46,8 @@ gem "ruby-openai"
 
 gem 'devise'
 
+gem "figaro"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
