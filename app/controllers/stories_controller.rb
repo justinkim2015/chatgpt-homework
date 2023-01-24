@@ -14,20 +14,24 @@ class StoriesController < ApplicationController
   def new
     @story = Story.new
 
-    resp = @client.completions(
-      parameters: {
-          model: "text-davinci-003",
-          prompt: "Write a silly 1-paragraph story in simple english about #{params[:input]} with 3 reading comprehension questions",
-          # prompt: "type a synonym for #{params[:input]}",
-          max_tokens: 3000,
-          temperature: 0.8
-      })
+    unless params[:input].nil?
+      resp = @client.completions(
+        parameters: {
+            model: "text-davinci-003",
+            prompt: "Write a silly 1-paragraph story in simple english about #{params[:input]} with 3 reading comprehension questions in the following format \nQuestions \n1.QUESTION \nA: ANSWER \n2.QUESTION \nA: ANSWER \n3.QUESTION \nA: ANSWER",
+            # prompt: "type a synonym for #{params[:input]}",
+            max_tokens: 3000,
+            temperature: 0.8
+        })
+      @json = resp["choices"][0]
 
-    @json = resp["choices"][0]
-
-    array = resp["choices"][0]["text"].split('Questions')
-    @text = array[0]
-    @quiz_array = array[1].split()
+      text_and_questions = resp["choices"][0]["text"].split('Questions')
+      @text = text_and_questions[0]
+      @questions = Story.process_questions(text_and_questions[1])  
+    else
+      @text = "No Story for you! Sorry."
+      @questions = ["Q1", "Q2", "Q3"]
+    end  
 
   end
 
