@@ -23,7 +23,7 @@ class Story < ApplicationRecord
     resp = client.completions(
       parameters: {
           model: "text-davinci-003",
-          prompt: "Write a silly 1-paragraph story in simple english about #{input} with 3 reading comprehension questions in the following format \nQuestions \n1.QUESTION \nA: ANSWER \n2.QUESTION \nA: ANSWER \n3.QUESTION \nA: ANSWER",
+          prompt: "Write a silly 1-paragraph story in simple english about #{input} with 3 reading comprehension questions in the following format \nQuestions\n1.QUESTION \nA: ANSWER \n2.QUESTION \nA: ANSWER \n3.QUESTION \nA: ANSWER",
           # prompt: "type a synonym for #{params[:input]}",
           max_tokens: 3000,
           temperature: 0.8
