@@ -18,4 +18,20 @@ class Story < ApplicationRecord
 
     questions
   end
+
+  def self.ask_ai(client, input)
+    resp = client.completions(
+      parameters: {
+          model: "text-davinci-003",
+          prompt: "Write a silly 1-paragraph story in simple english about #{input} with 3 reading comprehension questions in the following format \nQuestions \n1.QUESTION \nA: ANSWER \n2.QUESTION \nA: ANSWER \n3.QUESTION \nA: ANSWER",
+          # prompt: "type a synonym for #{params[:input]}",
+          max_tokens: 3000,
+          temperature: 0.8
+      })
+
+    text_and_questions = resp["choices"][0]["text"].split('Questions')
+  end 
+
+  def self.get_json
+  end
 end
