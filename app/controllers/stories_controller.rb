@@ -31,11 +31,11 @@ class StoriesController < ApplicationController
     else
       @text = "No Story for you! Sorry."
       @questions = ["Q1", "Q2", "Q3"]
+    end
 
-      3.times do |i|
-        @story.questions.build(content: @questions[i])
-      end    
-    end  
+    3.times do |i|
+      @story.questions.build(content: @questions[i])
+    end    
   end
 
   def create
