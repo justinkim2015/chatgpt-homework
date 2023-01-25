@@ -13,8 +13,6 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-    2.times { @story.questions.build }
-
 
     unless params[:input].nil?
       resp = @client.completions(
@@ -33,8 +31,11 @@ class StoriesController < ApplicationController
     else
       @text = "No Story for you! Sorry."
       @questions = ["Q1", "Q2", "Q3"]
-    end  
 
+      3.times do |i|
+        @story.questions.build(content: @questions[i])
+      end    
+    end  
   end
 
   def create
@@ -50,7 +51,7 @@ class StoriesController < ApplicationController
   private 
 
   def story_params
-    params.require(:story).permit(:title, :content, :question)
+    params.require(:story).permit(:title, :content, questions_attributes: [:content])
   end
 
   def create_client
