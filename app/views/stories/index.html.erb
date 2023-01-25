@@ -4,7 +4,7 @@
 
 <ul>
   <% @stories.each do |story| %>
-    <li><%= story.title %></li>
+    <li><%= link_to story.title, story_path(story.id) %></li>
   <% end %>
 </ul>
 

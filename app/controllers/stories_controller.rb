@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
   before_action :create_client
+  before_action :get_story, only: [:show, :edit, :delete]
 
   def index
     @stories = Story.all
@@ -48,6 +49,9 @@ class StoriesController < ApplicationController
     end 
   end
 
+  def show
+  end
+
   private 
 
   def story_params
@@ -56,5 +60,9 @@ class StoriesController < ApplicationController
 
   def create_client
     @client = OpenAI::Client.new
+  end
+
+  def get_story
+    @story = Story.find(params[:id])
   end
 end

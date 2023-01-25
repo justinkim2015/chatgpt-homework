@@ -1,0 +1,11 @@
+<h1><%= @story.title %></h1>
+<br>
+<%= @story.content %>
+<br>
+<ol>
+  <% @story.questions.each do |q| %>
+    <li><%= q.content %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'Home', root_path %>
