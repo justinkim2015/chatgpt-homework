@@ -18,6 +18,13 @@
 
 <%= form_with model: @story, class: "" do |f| %>
   <%# Make a nested form so that it also creates 3 questions %>
+
+  <% 3.times do |i| %>
+    <%= f.fields_for @story.questions.build do |sf| %>
+      <%= sf.hidden_field :content, value: @questions[i] %>
+    <% end %>
+  <% end %>
+
   <%= f.label :one, @questions[0] %>
   <%= f.label :two, @questions[1] %>
   <%= f.label :three, @questions[2] %>

@@ -13,6 +13,8 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    2.times { @story.questions.build }
+
 
     unless params[:input].nil?
       resp = @client.completions(
@@ -48,7 +50,7 @@ class StoriesController < ApplicationController
   private 
 
   def story_params
-    params.require(:story).permit(:title, :content)
+    params.require(:story).permit(:title, :content, :question)
   end
 
   def create_client
