@@ -56,7 +56,7 @@ class StoriesController < ApplicationController
   private 
 
   def story_params
-    params.require(:story).permit(:title, :content, questions_attributes: [:content])
+    params.require(:story).permit(:title, :content, questions_attributes: [:content, :answer])
   end
 
   def create_client

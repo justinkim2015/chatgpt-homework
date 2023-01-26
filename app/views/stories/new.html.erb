@@ -5,35 +5,25 @@
     <%= f.submit "Search", class: ""%>
 <% end %>
 
+<br><br>
+
 <%= @text %>
+
+<br><br>
+
+<ol>
+  <li><%= @questions[0] %></li>
+  <li><%= @questions[1] %></li>
+  <li><%= @questions[2] %></li>
+</ol>
+
+<br><br>
 
 <%= form_with model: @story, class: "" do |f| %>
   <%= f.fields_for :questions do |sf| %>
     <%= sf.hidden_field :content %>
+    <%= sf.text_field :answer %>
   <% end %>
-
-  <ul>
-    <li>
-      <div>
-        <%= f.label :one, @questions[0] %>
-        <%= f.text_field :one %>
-      </div>
-    </li>
-
-    <li>
-      <div>
-        <%= f.label :two, @questions[1] %>
-        <%= f.text_field :two %>
-      </div>
-    </li>
-
-    <li>
-      <div>
-        <%= f.label :three, @questions[2] %>
-        <%= f.text_field :three %>
-      </div>
-    </li>
-  </ul>
 
   <%= f.hidden_field :title, value: params[:input]%>
   <%= f.hidden_field :content, value: @text %>
