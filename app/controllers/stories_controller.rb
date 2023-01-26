@@ -6,9 +6,7 @@ class StoriesController < ApplicationController
     @stories = Story.all
 
     if defined?(resp)
-      @text = resp["choices"][0]["text"] 
     else
-      @text = "No story for you right now! :("
     end 
   end
 

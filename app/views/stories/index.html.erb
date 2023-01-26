@@ -1,11 +1,15 @@
-<h1>Tell a Story!</h1>
+<section id="main">
+  <div class="box">
+    <h1 class='title'>Choose a Story!</h1>
+    
+    <%= @text %>
+    
+    <ul>
+      <% @stories.each do |story| %>
+        <li><%= link_to story.title, story_path(story.id), class: 'link' %></li>
+      <% end %>
+    </ul>
+    <%= link_to "New Story", new_story_path, class: 'link' %>
+  </div>
+</section>
 
-<%= @text %>
-
-<ul>
-  <% @stories.each do |story| %>
-    <li><%= link_to story.title, story_path(story.id) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "New Story", new_story_path %>
