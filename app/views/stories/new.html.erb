@@ -1,37 +1,37 @@
-<%= form_with url: new_story_path, method: :get, class: "" do |f| %>
-    <%= f.label :input, 'Input 1 word' %>
-    <%= f.text_field :input, class: "" %>
+<section class="main">
+  <div class="box">
+    <h1 class='title'>New Story!</h1>
 
-    <%= f.submit "Search", class: ""%>
-<% end %>
-
-<br><br>
-
-<%= @text %>
-
-<br><br>
-
-<ol>
-  <li><%= @questions[0] %></li>
-  <li><%= @questions[1] %></li>
-  <li><%= @questions[2] %></li>
-</ol>
-
-<br><br>
-
-<%= form_with model: @story, class: "" do |f| %>
-  <%= f.fields_for :questions do |sf| %>
-    <%= sf.hidden_field :content %>
-    <%= sf.text_field :answer %>
-  <% end %>
-
-  <%= f.hidden_field :title, value: params[:input]%>
-  <%= f.hidden_field :content, value: @text %>
-
-  <%= f.submit "Submit Answers", class: ""%>
-<% end %>
-
-<%= link_to "home", root_path %>
+    <%= form_with url: new_story_path, method: :get, class: "" do |f| %>
+        <%= f.label :input, 'Type a word for a story!' %>
+        <%= f.text_field :input, class: "input" %>
+    
+        <%= f.submit "Create!", class: ""%>
+    <% end %>
+    
+    <div class="box"><%= @text %></div>
+    
+    <ol class='hidden'>
+      <li><%= @questions[0] %></li>
+      <li><%= @questions[1] %></li>
+      <li><%= @questions[2] %></li>
+    </ol>
+    
+    <%= form_with model: @story, class: "hidden" do |f| %>
+      <%= f.fields_for :questions do |sf| %>
+        <%= sf.hidden_field :content %>
+        <%= sf.text_field :answer %>
+      <% end %>
+    
+      <%= f.hidden_field :title, value: params[:input]%>
+      <%= f.hidden_field :content, value: @text %>
+    
+      <%= f.submit "Submit Answers", class: ""%>
+    <% end %>
+    
+    <%= link_to "home", root_path %>
+  </div>
+</section>
 
 <br><br>
 
