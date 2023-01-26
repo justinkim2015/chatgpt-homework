@@ -11,23 +11,26 @@
     
     <div class="box"><%= @text %></div>
     
-    <ol class='hidden'>
-      <li><%= @questions[0] %></li>
-      <li><%= @questions[1] %></li>
-      <li><%= @questions[2] %></li>
-    </ol>
-    
-    <%= form_with model: @story, class: "hidden" do |f| %>
-      <%= f.fields_for :questions do |sf| %>
-        <%= sf.hidden_field :content %>
-        <%= sf.text_field :answer %>
+    <div class="q-and-a">
+      <ol class='questions'>
+        <li class='question'><%= @questions[0] %></li>
+        <li class='question'><%= @questions[1] %></li>
+        <li class='question'><%= @questions[2] %></li>
+        <li class='question'>     </li>
+      </ol>
+      
+      <%= form_with model: @story, class: "answers" do |f| %>
+        <%= f.fields_for :questions do |sf| %>
+          <%= sf.hidden_field :content %>
+          <%= sf.text_field :answer, class: "answer" %>
+        <% end %>
+      
+        <%= f.hidden_field :title, value: params[:input]%>
+        <%= f.hidden_field :content, value: @text %>
+      
+        <%= f.submit "Submit Answers", class: ""%>
       <% end %>
-    
-      <%= f.hidden_field :title, value: params[:input]%>
-      <%= f.hidden_field :content, value: @text %>
-    
-      <%= f.submit "Submit Answers", class: ""%>
-    <% end %>
+    </div>
     
     <%= link_to "home", root_path %>
   </div>
