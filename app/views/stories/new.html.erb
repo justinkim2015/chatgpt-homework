@@ -11,26 +11,28 @@
     
     <div class="box"><p class='story'><%= @text %></p></div>
     
-    <div class="q-and-a">
-      <ol class='questions'>
-        <li class='question'><%= @questions[0] %></li>
-        <li class='question'><%= @questions[1] %></li>
-        <li class='question'><%= @questions[2] %></li>
-        <li class='question'>     </li>
-      </ol>
-      
-      <%= form_with model: @story, class: "answers" do |f| %>
-        <%= f.fields_for :questions do |sf| %>
-          <%= sf.hidden_field :content %>
-          <%= sf.text_field :answer, class: "answer" %>
+    <% if defined?(@questions) %>
+      <div class="q-and-a">
+        <ol class='questions'>
+          <li class='question'><%= @questions[0] %></li>
+          <li class='question'><%= @questions[1] %></li>
+          <li class='question'><%= @questions[2] %></li>
+          <li class='question'>     </li>
+        </ol>
+        
+        <%= form_with model: @story, class: "answers" do |f| %>
+          <%= f.fields_for :questions do |sf| %>
+            <%= sf.hidden_field :content %>
+            <%= sf.text_field :answer, class: "answer" %>
+          <% end %>
+        
+          <%= f.hidden_field :title, value: params[:input]%>
+          <%= f.hidden_field :content, value: @text %>
+        
+          <%= f.submit "Submit Answers", class: ""%>
         <% end %>
-      
-        <%= f.hidden_field :title, value: params[:input]%>
-        <%= f.hidden_field :content, value: @text %>
-      
-        <%= f.submit "Submit Answers", class: ""%>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
     
     <%= link_to "home", root_path %>
   </div>

@@ -29,13 +29,14 @@ class StoriesController < ApplicationController
       @text = text_and_questions[0]
       @questions = Story.process_questions(text_and_questions[1])  
     else
-      @text = "No Story for you! Sorry."
-      @questions = ["Q1", "Q2", "Q3"]
+      @text = "Type in a word and make a story!"
     end
 
-    3.times do |i|
-      @story.questions.build(content: @questions[i])
-    end    
+    if defined?(@questions)
+      3.times do |i|
+        @story.questions.build(content: @questions[i])
+      end    
+    end 
   end
 
   def create
