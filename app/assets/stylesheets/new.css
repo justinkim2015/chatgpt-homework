@@ -22,11 +22,15 @@
 
 .q-and-a {
   display: grid;
-  grid-template-columns: 100px 400px;
+  grid-template-columns: 400px 400px;
   grid-template-rows: 100px;
 }
 
 .question, .answer {
   height: 25px;
   justify-self: center;
+}
+
+.story {
+  font-size: 32px;
 }
