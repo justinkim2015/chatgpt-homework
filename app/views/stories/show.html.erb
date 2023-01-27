@@ -1,11 +1,13 @@
-<h1><%= @story.title %></h1>
-<br>
-<%= @story.content %>
-<br>
-<ol>
-  <% @story.questions.each do |q| %>
-    <li><%= q.content %></li>
-  <% end %>
-</ol>
-
-<%= link_to 'Home', root_path %>
+<section class="show">
+  <div class="box">
+    <h1 class='title'><%= @story.title %></h1>
+    <div class="box"><p class="story"><%= @story.content %></p></div>
+    <ol>
+      <% @story.questions.each do |q| %>
+        <li><%= q.content %> - <%= q.answer %></li>
+      <% end %>
+    </ol>
+  
+    <%= link_to 'Home', root_path %>
+  </div>
+</section>
