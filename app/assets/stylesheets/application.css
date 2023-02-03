@@ -13,7 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+  font-family: "Montserrat";
+  src: url(../Montserrat-Medium.ttf) format('ttf');
+ }
+ 
  .main {
+  font-family: 'Courier New', Courier, monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +40,18 @@
 }
 
 .box {
+  max-width: 60%;
   gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px black solid;
+  border-radius: 10px;
+  padding: 80px 40px;
+}
+
+.story-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +61,7 @@
   padding: 20px;
 }
 
-.title {
+.title {  
   font-size: 45px;
   font-weight: 100;
   margin-bottom: 20px;
@@ -51,4 +69,10 @@
 
 .hidden {
   display: none;
+}
+
+.button {
+  border: 1px black solid;
+  padding: 5px 20px;
+  border-radius: 5px;
 }

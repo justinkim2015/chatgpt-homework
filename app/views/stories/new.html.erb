@@ -1,15 +1,15 @@
 <section class="main">
   <div class="box">
-    <h1 class='title'>New Story!</h1>
+    <h1 class='title'>Let's make a new story</h1>
 
     <%= form_with url: new_story_path, method: :get, class: "" do |f| %>
         <%= f.label :input, 'Type a word for a story!' %>
         <%= f.text_field :input, class: "input" %>
     
-        <%= f.submit "Create!", class: ""%>
+        <%= f.submit "Create!", class: "button"%>
     <% end %>
     
-    <div class="box"><p class='story'><%= @text %></p></div>
+    <div class="story-box"><p class='story'><%= @text %></p></div>
     
     <% if defined?(@questions) %>
       <div class="q-and-a">
@@ -29,7 +29,7 @@
           <%= f.hidden_field :title, value: params[:input]%>
           <%= f.hidden_field :content, value: @text %>
         
-          <%= f.submit "Submit Answers", class: ""%>
+          <%= f.submit "Submit Answers", class: "button"%>
         <% end %>
       </div>
     <% end %>
