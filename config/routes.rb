@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "stories#index"
+  root "stories#new"
 
   resources :stories, :questions
 end

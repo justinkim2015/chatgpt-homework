@@ -42,7 +42,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params) 
 
     if @story.save
-      redirect_to root_path
+      redirect_to 'index'
     else 
       render :new, status: :unprocessable_entity
     end 
