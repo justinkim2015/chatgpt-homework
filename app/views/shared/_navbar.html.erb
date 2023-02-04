@@ -1,0 +1,8 @@
+<nav id='navbar'>
+  <%= link_to 'AI Story Time', root_path, id: 'nav-title' %>
+  <ul id='nav-links'>
+    <%= link_to 'Home', root_path, class: 'nav-link' %>
+    <%= link_to 'Log in', new_user_session_path, class: 'nav-link' %>
+    <%= link_to 'All Stories', stories_path, class: 'nav-link' %>
+  </ul>
+</nav>
