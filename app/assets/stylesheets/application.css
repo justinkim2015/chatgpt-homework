@@ -16,11 +16,14 @@
 
  @font-face {
   font-family: "Montserrat";
-  src: url(../Montserrat-Medium.ttf) format('ttf');
+  src: url(Montserrat-Medium.ttf);
  }
  
+ html {
+  font-family: "Montserrat";
+ }
+
  .main {
-  font-family: 'Courier New', Courier, monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +35,6 @@
   margin-bottom: 20px;
   font-size: 20px;
   text-decoration: none;
-  color: black;
 }
 
 .link:hover {
@@ -46,12 +48,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px black solid;
   border-radius: 10px;
   padding: 80px 40px;
+  background-color: #E6C229;
 }
 
 .story-box {
+  background-color: rgb(240, 240, 240);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,4 +78,5 @@
   border: 1px black solid;
   padding: 5px 20px;
   border-radius: 5px;
+  color: #4e4e4e;
 }

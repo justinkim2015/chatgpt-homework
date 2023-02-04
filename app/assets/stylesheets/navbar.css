@@ -4,8 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  background-color: #1A8FE3;
-  box-shadow: 1px 1px 3px rgb(158, 158, 158);
+  background-color: rgb(240, 240, 240);
 }
 
 #nav-links {
@@ -16,14 +15,24 @@
 
 #nav-title {
   padding: 10px;
-  color: #ffffff;
+  color: #1A8FE3;
   font-size: 30px;
   text-decoration: none;
 }
 
-.nav-link {
+.nav-link, .nav-login {
   margin: 0 10px;
-  color: #ffffff;
   font-size: 18px;
   text-decoration: none;
+}
+
+.nav-link {
+  color: #1A8FE3;
+}
+
+.nav-login {
+  padding: 6px 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: #F37933;
 }
