@@ -4,12 +4,26 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  background-color: #1A8FE3
-  ;
+  background-color: #1A8FE3;
+  box-shadow: 1px 1px 3px rgb(158, 158, 158);
 }
 
 #nav-links {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+#nav-title {
+  padding: 10px;
+  color: #ffffff;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.nav-link {
+  margin: 0 10px;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
 }
