@@ -19,8 +19,13 @@
   src: url(Montserrat-Medium.ttf);
  }
  
+ @font-face {
+  font-family: "Bubblegum";
+  src: url(BubblegumSans-Regular.ttf);
+ }
+ 
  html {
-  font-family: "Montserrat";
+  font-family: 'Bubblegum';
  }
 
  .main {
@@ -49,19 +54,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  padding: 80px 40px;
-  background-color: #E6C229;
-}
-
-.story-box {
+  padding: 120px;
   background-color: rgb(240, 240, 240);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px black solid;
-  border-radius: 10px;
-  padding: 20px;
+  box-shadow: 2px 2px 8px rgb(196, 196, 196);
 }
 
 .title {  
@@ -75,8 +70,14 @@
 }
 
 .button {
-  border: 1px black solid;
+  font-family: 'Bubblegum';
+  border: none;
   padding: 5px 20px;
   border-radius: 5px;
-  color: #4e4e4e;
+  background-color: #F37933;
+  color: white;
+}
+
+.button:hover {
+  background-color: #c9652b;
 }

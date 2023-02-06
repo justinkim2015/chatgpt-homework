@@ -1,6 +1,6 @@
 <section class="main">
   <div class="box">
-    <h1 class='title'>New Story Here :)</h1>
+    <h1 class='title'>Let's make a story!</h1>
 
     <%= form_with url: new_story_path, method: :get, class: "" do |f| %>
         <%= f.label :input, 'Type one word!' %>
@@ -23,7 +23,7 @@
         <%= form_with model: @story, class: "answers" do |f| %>
           <%= f.fields_for :questions do |sf| %>
             <%= sf.hidden_field :content %>
-            <%= sf.text_field :answer, class: "answer" %>
+            <%= sf.text_field :answer, placeholder: 'Write your answer here!', class: "answer" %>
           <% end %>
         
           <%= f.hidden_field :title, value: params[:input]%>
