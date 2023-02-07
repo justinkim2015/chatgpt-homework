@@ -14,17 +14,7 @@ class StoriesController < ApplicationController
     @story = Story.new
 
     unless params[:input].nil?
-      resp = @client.completions(
-        parameters: {
-            model: "text-davinci-003",
-            prompt: "Write a silly 1-paragraph story in simple english about #{params[:input]} with 3 reading comprehension questions in the following format \nQuestions \n1.QUESTION \nA: ANSWER \n2.QUESTION \nA: ANSWER \n3.QUESTION \nA: ANSWER",
-            max_tokens: 3000,
-            temperature: 0.8
-        })
-      
-      @json = resp["choices"][0]
-
-      text_and_questions = resp["choices"][0]["text"].split('Questions')
+      text_and_questions = Story.ask_ai(@client, params[:input])
       @text = text_and_questions[0]
       @questions = Story.process_questions(text_and_questions[1])  
     else
