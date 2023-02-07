@@ -23,14 +23,21 @@
         <%= form_with model: @story, class: "answers" do |f| %>
           <%= f.fields_for :questions do |sf| %>
             <%= sf.hidden_field :content %>
-            <%= sf.hidden_field :user_id, value: current_user.id %>
+            <% unless current_user.nil? %>
+              <%= sf.hidden_field :user_id, value: current_user.id %>
+            <% end %>
             <%= sf.text_field :answer, placeholder: 'Write your answer here!', class: "answer" %>
           <% end %>
         
           <%= f.hidden_field :title, value: params[:input]%>
           <%= f.hidden_field :content, value: @text %>
-        
-          <%= f.submit "Submit Answers", class: "button"%>
+
+          
+          <% if current_user.nil? %>
+            <%= link_to "Sign in to submit!", new_user_session_path, class: 'button' %>
+          <% else %>
+            <%= f.submit "Submit Answers", class: "button"%>
+          <% end %>
         <% end %>
       </div>
     <% end %>

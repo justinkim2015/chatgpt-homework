@@ -71,6 +71,7 @@
 
 .button {
   font-family: 'Bubblegum';
+  text-decoration: none;
   border: none;
   padding: 5px 20px;
   border-radius: 5px;
