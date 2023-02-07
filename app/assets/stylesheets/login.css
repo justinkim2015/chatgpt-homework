@@ -1,0 +1,33 @@
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 2px 2px 8px rgb(196, 196, 196);
+  padding: 30px 60px;
+}
+
+.login-title {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.session-link {
+  font-size: 16px;
+  text-decoration: none;
+  color: #1A8FE3;
+}
+
+.session-link:hover {
+  text-decoration: underline;
+}
+
+.session-input {
+  margin-bottom: 5px;
+}
+
+.session-button {
+  margin: 10px 0px;
+}
