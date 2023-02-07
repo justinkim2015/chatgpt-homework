@@ -23,6 +23,7 @@
         <%= form_with model: @story, class: "answers" do |f| %>
           <%= f.fields_for :questions do |sf| %>
             <%= sf.hidden_field :content %>
+            <%= sf.hidden_field :user_id, value: current_user.id %>
             <%= sf.text_field :answer, placeholder: 'Write your answer here!', class: "answer" %>
           <% end %>
         
@@ -35,7 +36,7 @@
     <% end %>
   </div>
 
-  <%= image_tag('hamster.png', class: 'new-hamster') %>
+  <%#= image_tag('hamster.png', class: 'new-hamster') %>
 </section>
 
 <br><br>

@@ -1,7 +1,8 @@
 class Story < ApplicationRecord
   has_many :questions
   accepts_nested_attributes_for :questions
-  
+  belongs_to :user
+
   def self.process_questions(string)
     filtered_array = []
     questions = []

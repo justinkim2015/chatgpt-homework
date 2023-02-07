@@ -39,7 +39,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params) 
+    @story = current_user.stories.new(story_params)
 
     if @story.save
       redirect_to @story
@@ -54,7 +54,7 @@ class StoriesController < ApplicationController
   private 
 
   def story_params
-    params.require(:story).permit(:title, :content, questions_attributes: [:content, :answer])
+    params.require(:story).permit(:title, :content, questions_attributes: [:content, :answer, :user_id])
   end
 
   def create_client
