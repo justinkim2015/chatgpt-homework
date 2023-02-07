@@ -4,7 +4,7 @@
   background-color: #ffffff;
 }
 
-.input::placeholder {
+.input::placeholder, .answer::placeholder {
   font-family: "Bubblegum";
 }
 
@@ -64,4 +64,8 @@
   max-width: 300px;
   top: 70%;
   left: 85%;
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
 }

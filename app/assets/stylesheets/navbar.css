@@ -42,3 +42,8 @@
 .main-logo {
   max-height: 40px;
 }
+
+/* Laptop */
+@media (min-width: 1024px) {
+}
+

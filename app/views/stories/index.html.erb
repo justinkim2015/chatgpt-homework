@@ -1,12 +1,10 @@
 <section class="main">
   <div class="box">
-    <h1 class='title'>Choose a Story!</h1>
+    <h1 class='title'>Past Stories!</h1>
     
-    <%= @text %>
-    
-    <ul>
+    <ul class='story-list'>  
       <% @stories.each do |story| %>
-        <li><%= link_to story.title, story_path(story.id), class: 'link' %></li>
+        <li><%= link_to story.title, story_path(story.id), class: 'link story-name' %></li>
       <% end %>
     </ul>
     <%= link_to "New Story", root_path, class: 'link' %>

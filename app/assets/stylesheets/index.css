@@ -1,0 +1,12 @@
+.story-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  .story-list {
+    display: flex;
+    flex-direction: column;
+  }  
+}
