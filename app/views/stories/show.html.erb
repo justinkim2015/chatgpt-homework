@@ -1,7 +1,7 @@
-<section class="show">
+<section class="main">
   <div class="box">
     <h1 class='title'><%= @story.title %></h1>
-    <div class="box"><p class="story"><%= @story.content %></p></div>
+    <div class="story-box"><p class="story"><%= @story.content %></p></div>
     <ol>
       <% @story.questions.each do |q| %>
         <li><%= q.content %> - <%= q.answer %></li>

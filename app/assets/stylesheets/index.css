@@ -3,10 +3,26 @@
   flex-direction: column;
 }
 
+.story-name {
+  text-decoration: none;
+  color: #1A8FE3;  
+}
+
+.story-name:hover {
+  text-decoration: underline;
+}
+
 /* Laptop */
 @media (min-width: 1024px) {
   .story-list {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }  
+
+  .story-name {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 }
