@@ -2,9 +2,13 @@
   <div class="box">
     <h1 class='title'>Past Stories!</h1>
     
-    <ul class='story-list'>  
-      <% @stories.each do |story| %>
-        <li><%= link_to story.title, story_path(story.id), class: 'story-name'%></li>
+    <ul class='story-list'>
+      <% if current_user.nil? %>
+        <li><%= link_to 'Log in', new_user_session_path, class: 'link' %> to see your stories!</li>
+      <% else %>
+        <% @stories.each do |story| %>
+          <li><%= link_to story.title, story_path(story.id), class: 'story-name'%></li>
+        <% end %>
       <% end %>
     </ul>
   </div>
