@@ -84,7 +84,35 @@
 }
 
 /* Laptop */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) {  
+   .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  .link {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  .title {  
+    font-size: 45px;
+    font-weight: 100;
+    margin-bottom: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .button {
+    padding: 5px 20px;
+    border-radius: 5px;
+  }
+  
   .box {
     padding: 120px;
   }

@@ -18,7 +18,7 @@
 #nav-title {
   padding: 10px 20px;
   color: #1A8FE3;
-  font-size: 45px;
+  font-size: 25px;
   text-decoration: none;
 }
 
@@ -45,5 +45,30 @@
 
 /* Laptop */
 @media (min-width: 1024px) {
+  #navbar {
+    padding: 20px 0;
+  }
+  
+  #nav-links {
+    padding: 10px 20px;
+  }
+  
+  #nav-title {
+    padding: 10px 20px;
+    font-size: 45px;
+  }
+  
+  .nav-link, .nav-login {
+    margin: 0 10px;
+    font-size: 18px;
+  }
+
+  .nav-login {
+    padding: 6px 10px;
+  }
+  
+  .main-logo {
+    max-height: 40px;
+  }
 }
 

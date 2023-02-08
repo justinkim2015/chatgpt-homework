@@ -67,5 +67,38 @@
 }
 
 /* Laptop */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) {  
+  .questions {
+    margin-top: 10px;
+  }
+  
+  .q-and-a {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 100px;
+    gap: 5%;
+    align-items: center;
+  }
+  
+  .question, .answer {
+    font-size: 14px;
+    height: 25px;
+  }
+  
+  .story {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  
+  .story-box {
+    padding: 20px;
+  }
+  
+  .new-hamster {
+    position: absolute;
+    max-width: 300px;
+    top: 70%;
+    left: 85%;
+  }
 }
