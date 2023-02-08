@@ -8,11 +8,37 @@
   box-shadow: 1px 1px 4px rgb(196, 196, 196);
 }
 
+#navbar-mobile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 1px 1px 4px rgb(196, 196, 196);
+}
+
 #nav-links {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 10px 20px;
+}
+
+.nav-links-mobile {
+  display: none;
+  height: 0px;
+  background-color: rgb(240, 240, 240);
+}
+
+.nav-links-mobile-active {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  background-color: rgb(240, 240, 240);
+  height: 40px;
+  padding: 0 10px 10px 10px;
+  box-shadow: 1px 1px 2px rgb(196, 196, 196);
 }
 
 #nav-title {
@@ -41,6 +67,11 @@
 
 .main-logo {
   max-height: 40px;
+}
+
+.ham-button {
+  max-width: 30px;
+  padding: 10px 20px;
 }
 
 /* Laptop */
