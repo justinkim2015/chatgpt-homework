@@ -3,7 +3,7 @@
   <%= image_tag('hamburger.png', class: "ham-button") %>
 </nav>
 
-<ul class='nav-links-mobile-active'>
+<ul id='ham-menu' class='nav-links-mobile-active'>
   <%= link_to 'Home', root_path, class: 'nav-link' %>
   <%= link_to 'All Stories', stories_path, class: 'nav-link' %>
   <% if current_user.nil? %>
