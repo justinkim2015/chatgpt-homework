@@ -33,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 95vh;
 }
 
 .link {
@@ -48,7 +48,7 @@
 }
 
 .box {
-  max-width: 55%;
+  max-width: 70%;
   gap: 15px;
   display: flex;
   flex-direction: column;
@@ -56,13 +56,8 @@
   align-items: center;
   border-radius: 10px;
   background-color: rgb(240, 240, 240);
+  padding: 18px;
   box-shadow: 2px 2px 8px rgb(196, 196, 196);
-}
-
-.title {  
-  font-size: 45px;
-  font-weight: 100;
-  margin-bottom: 20px;
 }
 
 .hidden {
@@ -73,7 +68,7 @@
   font-family: 'Bubblegum';
   text-decoration: none;
   border: none;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
   background-color: #F37933;
   color: white;
@@ -97,13 +92,7 @@
     margin-bottom: 20px;
     font-size: 20px;
   }
-  
-  .title {  
-    font-size: 45px;
-    font-weight: 100;
-    margin-bottom: 20px;
-  }
-  
+    
   .hidden {
     display: none;
   }
