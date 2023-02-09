@@ -88,6 +88,11 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  Ruby::OpenAI.configure do |config|
+    config.access_token = ENV['chatgpt_key']
+    # config.organization_id = ENV.fetch('OPENAI_ORGANIZATION_ID') # Optional.
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
