@@ -3,6 +3,8 @@
 }
 
 #navbar-mobile {
+  position: fixed;
+  top: 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -10,6 +12,7 @@
   padding: 20px 0;
   background-color: rgb(240, 240, 240);
   box-shadow: 1px 1px 4px rgb(196, 196, 196);
+  z-index: 1001;
 }
 
 #nav-links {
@@ -21,19 +24,33 @@
 
 .nav-links-mobile {
   display: none;
-  height: 0px;
   background-color: rgb(240, 240, 240);
 }
 
-.nav-links-mobile-active {
+.nav-links-mobile {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
   background-color: rgb(240, 240, 240);
-  height: 4b 0px;
-  padding: 0 10px 10px 10px;
   box-shadow: 1px 1px 2px rgb(196, 196, 196);
+  position: fixed;
+  z-index: 1002;
+  top: 90px;
+  width: 100%;
+  overflow: hidden;
 }
+
+.inactive {
+  height: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  height: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+
 
 #nav-title {
   padding: 10px 20px;
@@ -71,6 +88,8 @@
 /* Laptop */
 @media (min-width: 1024px) {
   #navbar {
+    position: fixed;
+    top: 0;
     display: flex;
     width: 100%;
     align-items: center;
