@@ -27,15 +27,15 @@
   width: 90%;
   display: grid;
   grid-template-columns: 45% 45%;
-  grid-template-rows: 100px;
   gap: 5%;
   align-items: center;
 }
 
 .question, .answer {
   color: #4e4e4e;
-  font-size: 14px;
+  font-size: 12px;
   height: 25px;
+  margin-bottom: 2px;
 }
 
 .title {  
