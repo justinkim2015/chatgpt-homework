@@ -20,3 +20,9 @@ This JSON loaded 0 of the form (NO SPACE AFTER NUMBER)
 
 
 {"text"=>"\n\nOnce there was a hamster who wanted to become a superhero. He was brave and determined so he decided to take on the challenge. He put on his superhero costume and set out on his mission. Along the way, he faced many obstacles, but with the help of his loyal sidekick, he eventually succeeded. \n\nQuestions \n1.What did the hamster want to become?\nA: The hamster wanted to become a superhero.\n2.What did he put on to go on his mission?\nA: He put on his superhero costume.\n3.Who helped him on his mission?\nA: His loyal sidekick helped him.", "index"=>0, "logprobs"=>nil, "finish_reason"=>"stop"}
+
+To-do:
+1. Create admin/teacher accounts
+2. Create coin system where students can only have 5 coins a week
+
+3. send email to teacher on submit
