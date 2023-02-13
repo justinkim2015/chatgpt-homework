@@ -54,4 +54,10 @@ class StoriesController < ApplicationController
   def get_story
     @story = Story.find(params[:id])
   end
+
+  def check_admin
+    unless current_user.admin?
+      redirect_to root_path
+    end
+  end
 end
