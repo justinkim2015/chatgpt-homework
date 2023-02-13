@@ -31,7 +31,6 @@
           <%= f.hidden_field :title, value: params[:input]%>
           <%= f.hidden_field :content, value: @text %>
 
-          
           <% if current_user.nil? %>
             <%= link_to "Sign in to submit!", new_user_session_path, class: 'button' %>
           <% else %>
