@@ -1,14 +1,10 @@
 class StoriesController < ApplicationController
   before_action :create_client
   before_action :get_story, only: [:show, :edit, :update, :delete]
-  # before_action :check_admin, only: [:delete]
+  before_action :check_permissions, only: [:delete, :edit, :update]
 
   def index
     @stories = Story.all
-
-    if defined?(resp)
-    else
-    end 
   end
 
   def show
@@ -54,12 +50,8 @@ class StoriesController < ApplicationController
   end
 
   def destroy
-    if current_user.admin? || current_user.id == @story.user_id 
-      @story.destroy
-      redirect_to root_path, notice: 'Story was successfully destroyed.'
-    else
-      redirect_to root_path, notice: "You don't have sufficient permissions to do this."
-    end  
+    @story.destroy
+    redirect_to root_path, notice: 'Story was successfully destroyed.'
   end
 
   private 
@@ -76,9 +68,9 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
   end
 
-  def check_admin
-    unless current_user.admin?
-      redirect_to root_path
+  def check_permissions 
+    unless current_user.admin? || current_user.id == @story.user_id
+      redirect_to root_path, alert: "You don't have sufficient permissions to do this."
     end
   end
 end
