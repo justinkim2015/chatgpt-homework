@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   before_action :create_client
   before_action :get_story, only: [:show, :edit, :update]
-  before_action :check_permissions, only: [:delete, :edit, :update]
+  before_action :check_admin, only: [:destroy, :edit, :update]
 
   def index
     return if current_user.nil?
@@ -75,8 +75,8 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
   end
 
-  def check_permissions 
-    unless current_user.admin? || current_user.id == @story.user_id
+  def check_admin 
+    unless current_user.admin?
       redirect_to root_path, alert: "You don't have sufficient permissions to do this."
     end
   end

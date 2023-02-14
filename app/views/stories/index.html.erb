@@ -8,10 +8,10 @@
       <% else %>
         <% @stories.each do |story| %>
           <% if current_user.admin? %>
-            <%= story.user.email %> -
+            <%= story.user.email %> - <%= link_to "Delete", story_path(story.id), data: {turbo_method: :delete} %>
           <% end %>
 
-          <li><%= link_to story.title, story_path(story.id), class: 'story-name'%> - <%= link_to "Delete", story_path(story.id), data: {turbo_method: :delete} %></li>
+          <li><%= link_to story.title, story_path(story.id), class: 'story-name'%></li>
 
         <% end %>
       <% end %>
