@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   before_action :create_client
-  before_action :get_story, only: [:show, :edit, :update, :delete]
+  before_action :get_story, only: [:show, :edit, :update]
   before_action :check_permissions, only: [:delete, :edit, :update]
 
   def index
@@ -56,6 +56,7 @@ class StoriesController < ApplicationController
   end
 
   def destroy
+    @story = Story.find(params[:id])
     @story.destroy
     redirect_to root_path, notice: 'Story was successfully destroyed.'
   end
