@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   before_action :create_client
   before_action :get_story, only: [:show, :edit, :delete]
+  before_action :check_admin, only: [:delete]
 
   def index
     @stories = Story.all
