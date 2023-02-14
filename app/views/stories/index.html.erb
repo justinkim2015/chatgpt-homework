@@ -7,9 +7,10 @@
         <li><%= link_to 'Log in', new_user_session_path, class: 'link' %> to see your stories!</li>
       <% else %>
         <% @stories.each do |story| %>
-          <% if story.user_id === current_user.id %>
-            <li><%= link_to story.title, story_path(story.id), class: 'story-name'%></li>
+          <% if current_user.admin? %>
+            <%= story.user.email %> -
           <% end %>
+          <li><%= link_to story.title, story_path(story.id), class: 'story-name'%></li>
         <% end %>
       <% end %>
     </ul>

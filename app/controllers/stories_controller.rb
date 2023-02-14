@@ -4,7 +4,13 @@ class StoriesController < ApplicationController
   before_action :check_permissions, only: [:delete, :edit, :update]
 
   def index
-    @stories = Story.all
+    return if current_user.nil?
+
+    if current_user.admin?
+      @stories = Story.all
+    else
+      @stories = current_user.stories
+    end 
   end
 
   def show
